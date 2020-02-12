@@ -1,6 +1,8 @@
 import React from 'react';
 import  Header from './components/Header';
 import styled from '@emotion/styled';
+import  Formulario from './components/Formulario';
+
 
 
 // Para Centrar el Condenido
@@ -27,6 +29,9 @@ return(
 
       <ContenedorFormulario>
 
+        <Formulario
+          
+        />
         
       </ContenedorFormulario>
   </Contenedor>
