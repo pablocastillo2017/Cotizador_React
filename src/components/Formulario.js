@@ -1,21 +1,61 @@
 import React from "react";
+import styled from "@emotion/styled";
+
+const Campo = styled.div`
+  display:flex;
+  margin-bottom: 1rem;
+  align-items: center;
+
+`;
+
+// centra y le da margen
+const Label = styled.label`
+
+  flex: 0 0 100px;
+
+`;
+
+const Select = styled.select`
+  width: 100%;
+  height: 35px;
+  background: white;
+  color: gray;
+  padding-left: 5px;
+  font-size: 14px;
+  border: none;
+  margin-left: 10px;
+
+  option {
+    color: black;
+    background: white;
+    display: flex;
+    white-space: pre;
+    min-height: 20px;
+    padding: 0px 2px 1px;
+  }
+`;
+
+// le da separacion entre en input y el texto
+const InputRadio = styled.input`
+    margin:0 1rem;
+`;
 
 const Formulario = () => {
   return (
     <form>
-      <div>
-        <lavel>Marca</lavel>
-        <select>
+      <Campo>
+        <Label>Marca</Label>
+        <Select>
           <option value="">---Selecione---</option>
           <option value="americano">Americano</option>
           <option value="europeo">Europeo</option>
           <option value="asiatico">Asiatico</option>
-        </select>
-      </div>
+        </Select>
+      </Campo>
 
-      <div>
-        <lavel>Año</lavel>
-        <select>
+      <Campo>
+        <Label>Año</Label>
+        <Select>
           <option value="">-- Seleccione --</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>
@@ -27,28 +67,28 @@ const Formulario = () => {
           <option value="2014">2014</option>
           <option value="2013">2013</option>
           <option value="2012">2012</option>
-        </select>
-      </div>
-      <div>
-          <label>Plan</label>
-          <input
+        </Select>
+      </Campo>
+      <Campo>
+          <Label>Plan</Label>
+          {/* <InputRadio
             type="radio"
             name="plan"
             value="basico"
 
-            />Básicos
-            <input
+            />*/}Básicos 
+            <InputRadio
             type="radio"
             name="plan"
             value="Básicos"
 
             />Completo
-            <input
+            <InputRadio
             type="radio"
             name="plan"
             value="completo"
             />
-      </div>
+      </Campo>
 
       <button type="button">Cotizar</button>
     </form>
