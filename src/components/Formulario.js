@@ -48,7 +48,7 @@ const Boton = styled.button`
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
-  border: none;
+  border: outset;
   transition: background-color .3s ease;
   margin-top: 2rem;
 
@@ -63,6 +63,17 @@ const Boton = styled.button`
 
 // background-color > cambia el color de fondo del boton
 
+  const Error = styled.div `
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    width:100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+
+  `;
+
 const Formulario = () => {
 
   const [datos , guardarDatos] = useState({
@@ -70,6 +81,8 @@ const Formulario = () => {
     year:'',
     plan:''
   });
+
+  const [error , guardarError] = useState(false);
 
   // Extraer Valores del State
   const {marca ,year ,plan} = datos;
@@ -82,9 +95,26 @@ const Formulario = () => {
     })
    }
 
+   // cuando el usuario presiona submit
+
+   const cotizadorSeguro = e =>{
+
+      e.preventDefault();
+
+      if (marca.trim() === '' || year.trim() === '' || plan.trim()==='') {
+        guardarError(true);
+        return;
+      }
+      guardarError(false);
+   }
   
   return (
-    <form>
+    <form
+        onSubmit={cotizadorSeguro}
+    >
+
+      {error ? <Error>Todos Los Campos Son Obligatorios </Error>: null}
+      
       <Campo>
         <Label>Marca</Label>
         <Select
@@ -141,7 +171,7 @@ const Formulario = () => {
                 /> Completo
             </Campo>
 
-      <Boton type="button">Cotizar</Boton>
+      <Boton type="submit">Cotizar</Boton>
     </form>
   );
 };
