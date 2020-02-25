@@ -1,5 +1,7 @@
 import React ,{useState}from "react";
 import styled from "@emotion/styled";
+import {obtenerDiferenciaYear} from '../helper';
+
 
 const Campo = styled.div`
   display:flex;
@@ -106,8 +108,30 @@ const Formulario = () => {
         return;
       }
       guardarError(false);
-   }
-  
+   
+  // Una base de 2000
+
+  let resultado = 2000;
+
+   // Obtener la diferencia de anios
+
+   const diferencia = obtenerDiferenciaYear(year);
+
+
+   // por cada anio hay que restar el 3%
+   resultado-= ((diferencia * 3 ) * resultado) / 100;
+   
+
+    // americano 15 
+    // asitico %5
+    // Europero 30%
+
+    //Basico aumenta 20%
+    //Completo 50%
+
+    // Total
+
+  }
   return (
     <form
         onSubmit={cotizadorSeguro}
