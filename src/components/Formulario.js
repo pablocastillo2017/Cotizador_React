@@ -70,7 +70,7 @@ const Error = styled.div`
   font-weight: bold;
 `;
 
-const Formulario = () => {
+const Formulario = ({guardarResumen}) => {
   const [datos, guardarDatos] = useState({
     marca: "",
     year: "",
@@ -127,6 +127,14 @@ const Formulario = () => {
     console.log(resultado);
 
     // Total
+
+    // pasar los datos al state
+    guardarResumen({
+      cotizacion: resultado,
+      datos
+    });
+
+
   };
   return (
     <form onSubmit={cotizadorSeguro}>
