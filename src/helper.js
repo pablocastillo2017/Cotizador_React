@@ -31,7 +31,17 @@ export function calcularMarca(marca) {
 }
 
 // Calcula el tipo de seguro
-    // ? :  > ternarios
- export function obtenerPlan(plan) {
-     return (plan === 'basico') ? 1.20 : 1.50;
- }
+// ? :  > ternarios
+export function obtenerPlan(plan) {
+  return plan === "basico" ? 1.2 : 1.5;
+}
+
+// Muestra la Primer Letra MAyuscula
+// chartAt() El método de charat devuelve el carácter en el índice definido
+// toUpperCase() convierte la cadena de string a mayuscula:
+// slice () devuelve los elementos seleccionados en una matriz,
+// como un nuevo objeto de matriz.
+// Muestra la primer letra mayuscula
+export function primerMayuscula( texto) {
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+}
