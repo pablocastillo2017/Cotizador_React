@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from 'prop-types';
 
 // link Documentacion
 // https://emotion.sh/docs/introduction
@@ -25,5 +26,9 @@ const Header = ({ titulo }) => {
     </ContenedorHeader>
   );
 };
+
+Header.prototype = {
+  titulo: PropTypes.string.isRequired
+}
 
 export default Header;
