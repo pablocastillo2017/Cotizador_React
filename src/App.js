@@ -3,6 +3,7 @@ import  Header from './components/Header';
 import styled from '@emotion/styled';
 import  Formulario from './components/Formulario';
 import  Resumen from './components/Resumen';
+import  Resultado from './components/Resultado';
 
 
 
@@ -33,7 +34,7 @@ function App() {
  });
 
  // Extraer Datos 
- const {datos} = resumen;
+ const {cotizacion,datos} = resumen;
 
  
   
@@ -57,6 +58,10 @@ return(
 
         />
         
+        <Resultado
+          cotizacion={cotizacion}
+        />
+
       </ContenedorFormulario>
   </Contenedor>
   
